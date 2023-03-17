@@ -1,0 +1,264 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> A
+Rule 1     A -> INICIA
+Rule 2     A -> TERMINA
+Rule 3     A -> CREA APARENT ARCH CPARENT
+Rule 4     A -> ABRE APARENT ARCH CPARENT
+Rule 5     A -> INGRESA APARENT NUMERO COMA NOMBRE COMA NUMERO COMA OCUPACION COMA DIRECCION CPARENT
+Rule 6     A -> LISTA
+Rule 7     A -> MUESTRA APARENT NUMERO CPARENT
+Rule 8     A -> CIERRA
+
+Terminals, with rules where they appear
+
+ABRE                 : 4
+APARENT              : 3 4 5 7
+ARCH                 : 3 4
+CIERRA               : 8
+COMA                 : 5 5 5 5
+CPARENT              : 3 4 5 7
+CREA                 : 3
+DIRECCION            : 5
+INGRESA              : 5
+INICIA               : 1
+LISTA                : 6
+MUESTRA              : 7
+NOMBRE               : 5
+NUMERO               : 5 5 7
+OCUPACION            : 5
+TERMINA              : 2
+error                : 
+
+Nonterminals, with rules where they appear
+
+A                    : 0
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . A
+    (1) A -> . INICIA
+    (2) A -> . TERMINA
+    (3) A -> . CREA APARENT ARCH CPARENT
+    (4) A -> . ABRE APARENT ARCH CPARENT
+    (5) A -> . INGRESA APARENT NUMERO COMA NOMBRE COMA NUMERO COMA OCUPACION COMA DIRECCION CPARENT
+    (6) A -> . LISTA
+    (7) A -> . MUESTRA APARENT NUMERO CPARENT
+    (8) A -> . CIERRA
+
+    INICIA          shift and go to state 2
+    TERMINA         shift and go to state 3
+    CREA            shift and go to state 4
+    ABRE            shift and go to state 5
+    INGRESA         shift and go to state 6
+    LISTA           shift and go to state 7
+    MUESTRA         shift and go to state 8
+    CIERRA          shift and go to state 9
+
+    A                              shift and go to state 1
+
+state 1
+
+    (0) S' -> A .
+
+
+
+state 2
+
+    (1) A -> INICIA .
+
+    $end            reduce using rule 1 (A -> INICIA .)
+
+
+state 3
+
+    (2) A -> TERMINA .
+
+    $end            reduce using rule 2 (A -> TERMINA .)
+
+
+state 4
+
+    (3) A -> CREA . APARENT ARCH CPARENT
+
+    APARENT         shift and go to state 10
+
+
+state 5
+
+    (4) A -> ABRE . APARENT ARCH CPARENT
+
+    APARENT         shift and go to state 11
+
+
+state 6
+
+    (5) A -> INGRESA . APARENT NUMERO COMA NOMBRE COMA NUMERO COMA OCUPACION COMA DIRECCION CPARENT
+
+    APARENT         shift and go to state 12
+
+
+state 7
+
+    (6) A -> LISTA .
+
+    $end            reduce using rule 6 (A -> LISTA .)
+
+
+state 8
+
+    (7) A -> MUESTRA . APARENT NUMERO CPARENT
+
+    APARENT         shift and go to state 13
+
+
+state 9
+
+    (8) A -> CIERRA .
+
+    $end            reduce using rule 8 (A -> CIERRA .)
+
+
+state 10
+
+    (3) A -> CREA APARENT . ARCH CPARENT
+
+    ARCH            shift and go to state 14
+
+
+state 11
+
+    (4) A -> ABRE APARENT . ARCH CPARENT
+
+    ARCH            shift and go to state 15
+
+
+state 12
+
+    (5) A -> INGRESA APARENT . NUMERO COMA NOMBRE COMA NUMERO COMA OCUPACION COMA DIRECCION CPARENT
+
+    NUMERO          shift and go to state 16
+
+
+state 13
+
+    (7) A -> MUESTRA APARENT . NUMERO CPARENT
+
+    NUMERO          shift and go to state 17
+
+
+state 14
+
+    (3) A -> CREA APARENT ARCH . CPARENT
+
+    CPARENT         shift and go to state 18
+
+
+state 15
+
+    (4) A -> ABRE APARENT ARCH . CPARENT
+
+    CPARENT         shift and go to state 19
+
+
+state 16
+
+    (5) A -> INGRESA APARENT NUMERO . COMA NOMBRE COMA NUMERO COMA OCUPACION COMA DIRECCION CPARENT
+
+    COMA            shift and go to state 20
+
+
+state 17
+
+    (7) A -> MUESTRA APARENT NUMERO . CPARENT
+
+    CPARENT         shift and go to state 21
+
+
+state 18
+
+    (3) A -> CREA APARENT ARCH CPARENT .
+
+    $end            reduce using rule 3 (A -> CREA APARENT ARCH CPARENT .)
+
+
+state 19
+
+    (4) A -> ABRE APARENT ARCH CPARENT .
+
+    $end            reduce using rule 4 (A -> ABRE APARENT ARCH CPARENT .)
+
+
+state 20
+
+    (5) A -> INGRESA APARENT NUMERO COMA . NOMBRE COMA NUMERO COMA OCUPACION COMA DIRECCION CPARENT
+
+    NOMBRE          shift and go to state 22
+
+
+state 21
+
+    (7) A -> MUESTRA APARENT NUMERO CPARENT .
+
+    $end            reduce using rule 7 (A -> MUESTRA APARENT NUMERO CPARENT .)
+
+
+state 22
+
+    (5) A -> INGRESA APARENT NUMERO COMA NOMBRE . COMA NUMERO COMA OCUPACION COMA DIRECCION CPARENT
+
+    COMA            shift and go to state 23
+
+
+state 23
+
+    (5) A -> INGRESA APARENT NUMERO COMA NOMBRE COMA . NUMERO COMA OCUPACION COMA DIRECCION CPARENT
+
+    NUMERO          shift and go to state 24
+
+
+state 24
+
+    (5) A -> INGRESA APARENT NUMERO COMA NOMBRE COMA NUMERO . COMA OCUPACION COMA DIRECCION CPARENT
+
+    COMA            shift and go to state 25
+
+
+state 25
+
+    (5) A -> INGRESA APARENT NUMERO COMA NOMBRE COMA NUMERO COMA . OCUPACION COMA DIRECCION CPARENT
+
+    OCUPACION       shift and go to state 26
+
+
+state 26
+
+    (5) A -> INGRESA APARENT NUMERO COMA NOMBRE COMA NUMERO COMA OCUPACION . COMA DIRECCION CPARENT
+
+    COMA            shift and go to state 27
+
+
+state 27
+
+    (5) A -> INGRESA APARENT NUMERO COMA NOMBRE COMA NUMERO COMA OCUPACION COMA . DIRECCION CPARENT
+
+    DIRECCION       shift and go to state 28
+
+
+state 28
+
+    (5) A -> INGRESA APARENT NUMERO COMA NOMBRE COMA NUMERO COMA OCUPACION COMA DIRECCION . CPARENT
+
+    CPARENT         shift and go to state 29
+
+
+state 29
+
+    (5) A -> INGRESA APARENT NUMERO COMA NOMBRE COMA NUMERO COMA OCUPACION COMA DIRECCION CPARENT .
+
+    $end            reduce using rule 5 (A -> INGRESA APARENT NUMERO COMA NOMBRE COMA NUMERO COMA OCUPACION COMA DIRECCION CPARENT .)
+
